@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}">
+    <title>Home Page</title>
+</head>
+<body id="Homebody">
+    <nav class="navbar">
+     <a href=""  class="nav-link">Home</a><a href="/Admin" class="nav-link">Admin Login</a><a href="#contact-section" class="nav-link">Contact us</a>
+
+    </nav>
+    <main>
+       <section class="Herosection">
+       <img src="{{ url_for('static', filename='images/Media (1).jpg') }}" alt="" class="Homebgi">
+       <h2>Empowering Lives Through Skills</h2>
+       <a href="/Surveyform"><button>Start Your Survey</button></a>
+       </section>
+       <section class="Aboutsection">
+        <h2 class="">About the initiative</h2>
+        <p>In collaboration with a local NGO, Genpact is on a mission to empower displaced and underserved communities in countries like Bangladesh.
+            These communities, though connected through mobile devices and basic internet access, often lack the skills and confidence to engage with modern technology and employment tools.</p>
+        <p>This web application provides a simple, accessible interface for individuals of all ages to share their background, interests, and areas where they wish to upskill.
+            The data collected will help design personalised training programmes that enable individuals to become self-reliant and economically independent.</p>
+        <p>Whether it's learning to cook professionally, start a small business, or improve digital literacy  this platform is the first step toward a better future.</p>
+       </section>
+
+    </main>
+    <footer id="contact-section" class="footer">
+        <h2>Contact Us</h2>
+        <p>📧 Email: info@upskillgenpact.org</p>
+        <p>📞 Phone: +880-123-456-7890</p>
+        <p>🏠 NGO Office: Haffezpet, Hyderabad</p>
+        <p>🌐 Powered by Genpact & Local NGO</p>
+    </footer>
+   
+</body>
+</html>

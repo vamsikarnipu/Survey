@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Dashboard.css') }}">
+    <title>Registration</title>
+</head>
+<body>
+<h2>All Survey Responses</h2>
+<a href="/DownloadCSV"><button>Download CSV</button></a>
+<a href="/Backtohome"><button>Home</button></a>
+<a href="/Logout"><button>Log Out</button></a>
+
+<table border="px">
+ <tr>
+   <th>Index</th>
+   <th>Full Name</th>
+   <th>Age</th>
+   <th>Gender</th>
+   <th>Contact Number</th>
+   <th>Email</th>
+   <th>Address</th>
+   <th>Education Qualification</th>
+   <th>Current Occupation</th>
+   <th>Monthly Income</th>
+   <th>Device</th>
+   <th>Preferred Languge</th>
+   <th>Learning Mode</th>
+   <th>Time Slots</th>
+   <th>Main Skill</th>
+   <th>Sub Skill</th>
+   <th>Experience</th>
+   <th>Motivation To Learn</th>
+   <th>Willingness To Commit</th>
+   <th>Speacial Needs</th>
+   <th>Referred By</th>
+</tr>
+{% for record in responses %}
+<tr>
+    {% for i in range(0, 21) %}
+      <td>{{ record[i] }}</td>
+    {% endfor %}
+  </tr>
+{% endfor %}  
+
+
+
+
+</table>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Survey.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+    <script src="{{ url_for('static', filename='js/Survey.js') }}"></script>
+</head>
+<body class="survey_form">
+    <a href="/Backtohome"><button>Home</button></a>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-danger" id="alert">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+    <form action="/Survey" method="post" >
+    <label>Full Name:   <sup>*</sup> </label>
+    <input type="text" name="name" required><br>
+ 
+    <label>Age:   <sup>*</sup> </label>
+    <input type="number" name="age" required><br>
+ 
+    <label>Gender:  <sup>*</sup> </label>
+    
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female" required> Female
+    <input type="radio" name="gender" value="Other" required> Other<br>
+ 
+    <label>Contact Number (optional):</label>
+    <input type="tel" name="contact" ><br>
+ 
+    <label>Email (optional):</label>
+    <input type="email" name="email"><br>
+ 
+    <label>Address:  <sup>*</sup> </label>
+    <textarea name="address" required></textarea><br>
+ 
+    <label>Educational Qualification: <sup>*</sup> </label>
+    <select name="education" required>
+        <option value="" disabled selected>Choose option</option>
+        <option>No formal education</option>
+        <option>10th</option>
+        <option>12th</option>
+        <option>Graduate</option>
+        <option>Postgraduate</option>
+        <option>Other</option>
+    </select><br>
+ 
+    <label>Current Occupation:   <sup>*</sup></label>
+    <select name="occupation" required>
+        <option value="" disabled selected>Choose option</option>
+        <option>Student</option>
+        <option>Homemaker</option>
+        <option>Unemployed</option>
+        <option>Daily Wage Worker</option>
+        <option>Self-employed</option>
+        <option>Other</option>
+    </select><br>
+ 
+    <label>Monthly Income Range (optional):</label>
+    <select name="income">
+        <option value="" disabled selected>Choose option</option>
+        <option>None</option>
+        <option>Below ₹5,000</option>
+        <option>₹5k–10k</option>
+        <option>₹10k–20k</option>
+        <option>Above ₹20k</option>
+    </select><br>
+ 
+    <label>Device Availability:   </label>
+    <input type="checkbox" name="device" value="Smartphone"> Smartphone
+    <input type="checkbox" name="device" value="Laptop"> Laptop
+    <input type="checkbox" name="device" value="Internet"> Internet Connectivity
+ 
+    <label>Preferred Learning Language:  <sup>*</sup> </label>
+    <select name="language" required>
+        <option value="" disabled selected>Choose option</option>
+        <option>Telugu</option>
+        <option>Hindi</option>
+        <option>English</option>
+        <option>Other</option>
+    </select><br>
+ 
+    <label>Learning Mode Preference:  <sup>*</sup> </label>
+    <select name="learning_mode" required>
+        <option value="" disabled selected>Choose option</option>
+        <option>Online</option>
+        <option>Offline</option>
+        <option>Hybrid</option>
+    </select><br>
+ 
+    <label>Available Time Slots:  <sup>*</sup> </label>
+    <select name="time_slots" required>
+        <option value="" disabled selected>Choose option</option>
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Evening</option>
+    </select><br>
+ 
+    <label>Main Skill to Upskill:</label>
+    <select name="main_skill" id="main_skill" onchange="updateSubSkills()" required>
+    <option value="" disabled selected>Choose option</option>
+    <option>Cooking</option>
+    <option>Dancing</option>
+    <option>Coding</option>
+    <option>Music</option>
+    <option>Art & Design</option>
+    <option>Fitness & Health</option>
+    <option>Language Learning</option>
+    <option>Soft Skills</option>
+    <option>Teaching</option>
+    <option>Business & Marketing</option>
+    </select><br>
+    <label>Sub-Skill Specialisation:</label>
+    <select name="sub_skill" id="sub_skill" required></select><br>
+ 
+    <label>Prior Experience in this Skill: <sup>*</sup></label>
+    <select name="experience" required>
+        <option value="" disabled selected>Choose option</option>
+        <option>None</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Advanced</option>
+    </select><br>
+ 
+    <label>Motivation to Learn:</label>
+    <textarea name="motivation" required></textarea><br>
+ 
+    <label>Willingness to Commit Time:  <sup>*</sup> </label>
+    <select name="commit_time" required>
+        <option value="" disabled selected>Choose option</option>
+        <option>1-2 hrs/week</option>
+        <option>3-5 hrs/week</option>
+        <option>6+ hrs/week</option>
+    </select><br>
+ 
+    <label>Special Needs / Disabilities (optional):  </label>
+    <select name="special_needs">
+        <option value="" disabled selected>Choose option</option>
+        <option>None</option>
+        <option >Vision impairment</option>
+        <option>Hearing difficulty</option>
+        <option>Physical disability</option>
+    </select><br>
+ 
+    <label>Referred By (optional):</label>
+    <input type="text" name="referred_by"><br>
+    <div id="consent">
+        <input type="checkbox" name="" id="checkbox" required>
+    <label for="checkbox">I confirm that the information provided is accurate and I consent to its use for educational and research purposes.</label><br>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+  <ul>
+    {% for message in messages %}
+      <li><strong>{{ message }}</strong></li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endwith %}
+
+ 
+</body>
+</html>
