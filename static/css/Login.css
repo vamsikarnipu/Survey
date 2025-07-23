@@ -1,0 +1,123 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the login form */
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#Log_in
+{
+    position: relative;
+    float: left;
+    top: 20px;
+}
+
+/* Home button */
+.login-container a button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 80px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    float: right;
+    position: relative;
+    bottom: 40px;
+}
+
+.login-container a button:hover {
+    background-color: #003366;
+}
+
+/* Login form styling */
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #004080;
+}
+
+.login-form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Submit button */
+.login-form button[type="submit"] {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button[type="submit"]:hover {
+    background-color: #003366;
+}
+  
+
+.alert {
+    color: rgb(232, 30, 30);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background-color: #e8f5e9;
+    padding: 0.75rem;
+    border-radius: 6px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #c8e6c9;
+  }
+
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-form h2 {
+        font-size: 1.5rem;
+    }
+}
