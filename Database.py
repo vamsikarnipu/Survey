@@ -1,3 +1,4 @@
+import sqlite3
 def init_db():
     # Connect to SQLite (this will create data.db if it doesn't exist)
     conn = sqlite3.connect('data.db')
