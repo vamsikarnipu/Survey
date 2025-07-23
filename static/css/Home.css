@@ -1,0 +1,158 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+body#Homebody {
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #004080;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffcc00;
+}
+
+/* Hero section */
+.Herosection {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+}
+
+.Homebgi {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+.Herosection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #004080;
+}
+
+.Herosection button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Herosection button:hover {
+    background-color: #003366;
+}
+
+/* About section */
+.Aboutsection {
+    padding: 3rem 2rem;
+    background-color: #ffffff;
+    border-top: 2px solid #e0e0e0;
+    text-align: center;
+}
+
+/* .Aboutsection {
+    padding: 3rem 2rem;
+    background-color: #ffffff;
+    border-top: 2px solid #e0e0e0;
+    background-image: url('/static/images/About.jpg');
+    background-size: 100% 100%; /* Stretch to fill both width and height */
+    /* background-repeat: no-repeat;
+    background-position: center} */ */
+
+.Aboutsection h2 {
+    font-size: 2rem;
+    color: #004080;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.Aboutsection p {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: 1rem auto;
+    font-size: 1.1rem;
+    color: #555;
+    text-align: justify;
+}
+
+.footer {
+    /* background-image: url('/static/images/image-copy.png'); */
+    background: linear-gradient(to right, #7cd4df, #bd7bb3);
+    padding: 10px;
+    text-align: center;
+    height: auto;
+    border-top: 2px solid #ddd;
+    background-size: cover;
+    font-weight:80;
+  }
+   
+  .footer h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+   
+  .footer p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 16px;
+  }
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-link {
+        margin: 0.5rem 0;
+    }
+
+    .Herosection h2 {
+        font-size: 2rem;
+    }
+
+    .Aboutsection h2 {
+        font-size: 1.75rem;
+    }
+}
+
+
