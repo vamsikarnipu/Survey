@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,session,redirect,flash,send_file
 import sqlite3
 import csv
-from database import init_db
+from Database import init_db
 app=Flask(__name__)
 app.secret_key="Sunny"
 
