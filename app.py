@@ -70,7 +70,7 @@ def Login():
     if request.method == "POST":
         username = request.form.get("Username")
         Password = request.form.get("Password")
-        if username == "admin" and Password == "vamsi":
+        if username == "admin" and Password == "sunny":
             session['Admin_login'] = True
             return redirect('/Dashboard')
         else:
